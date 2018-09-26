@@ -61,6 +61,9 @@ def parse_sepa(desc):
             result['description'] = re.findall("Omschrijving: (.*)IBAN:", desc)[0].strip()
         else:
             result['description'] = re.findall("Omschrijving: (.*)", desc)[0].strip()
+    elif desc.startswith("SEPA iDEAL"):
+        result['name'] = re.findall(".*Naam: (.*) Omschrijving:", desc)[0].strip()
+        result['description'] = remove_33_char_space(re.findall(".*(Omschrijving: .*)", desc)[0])[14:].strip()
     else:
         print "Error while parsing " + desc
         result['name'] = ''
