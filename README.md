@@ -24,3 +24,9 @@ Known issues
 ============
 
 The conversion is not flawless, mainly because there is no documentation available on the structure of the files you can download from ABN Amro, so I created the tool mostly by trail-and-error. 
+
+
+Credit
+===========
+
+All credit goes to @msturm since he has written most of the code for this.
